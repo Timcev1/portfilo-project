@@ -7,7 +7,6 @@ export default function header() {
     <header className="p-4 bg-slate-200 dark:bg-neutral-900	 light:bg-white">
       <nav className="mx-auto max-w-screen-xl flex justify-between items-center">
         <ThemeToggle />
-        <LanguageSwitcher />
       </nav>
     </header>
   );
