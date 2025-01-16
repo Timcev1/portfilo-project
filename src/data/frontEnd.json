@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "skill": "HTML",
+        "level": "Expert"
+    },
+    {
+        "id": 2,
+        "skill": "CSS",
+        "level": "Expert"
+    },
+    {
+        "id": 3,
+        "skill": "SCSS",
+        "level": "Intermediate"
+    },
+    {
+        "id": 4,
+        "skill": "JavaScript",
+        "level": "Expert"
+    },
+    {
+        "id": 5,
+        "skill": "React",
+        "level": "Intermediate"
+    },
+    
+    {
+        "id": 6,
+        "skill": "WCAG",
+        "level": "Expert",
+        "url":"https://www.w3.org/WAI/standards-guidelines/wcag/"
+    },
+    {
+        "id": 7,
+        "skill": "Bootstrap",
+        "level": "Expert"
+    },
+    {
+        "id": 8,
+        "skill": "TailwindCSS",
+        "level": "Expert"
+    },
+    {
+        "id": 9,
+        "skill": "AlpineJS",
+        "level": "Intermediate",
+        "url": "https://alpinejs.dev/"
+    }
+]

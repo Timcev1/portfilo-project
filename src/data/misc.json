@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "skill": "GIT",
+        "level": "Expert"
+    },
+    {
+        "id": 2,
+        "skill": "MVC",
+        "level": "Intermediate"
+    },
+    {
+        "id": 3,
+        "skill": "REST API",
+        "level": "Expert"
+    },
+    {
+        "id":4,
+        "skill": "UX/UI Design",
+        "level": "Intermediate"
+    },
+    {
+        "id":5,
+        "skill": "Image Editing",
+        "level":"Intermediate"
+    },
+    {
+        "id":6,
+        "skill": "Figma",
+        "level":"Intermediate"
+    },
+    {
+        "id":7,
+        "skill": "Communication",
+        "level":"Expert"
+    },
+    {
+        "id":8,
+        "skill": "Problem Solving",
+        "level":"Expert"
+    },
+    {
+        "id":9,
+        "skill": "Scrum",
+        "level":"Expert"
+    },
+    {
+        "id":10,
+        "skill": "Agile",
+        "level":"Expert"
+    }
+]
