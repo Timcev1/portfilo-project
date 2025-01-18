@@ -41,7 +41,7 @@ export default function Home() {
               <div className="flex-1 justify-center">
                 <h2 className="text-4xl text-center bold py-4 font-semibold font-[family-name:var(--font-geist-mono)]">About Me</h2>
                 <p className="text-xl">I am a self-taught full-stack web developer with substantial experience in developing web applications and creating responsive user interfaces. As a technically minded professional, I thrive on solving problems of any scale, always finding solutions to even the most challenging questions.</p>
-                <p className="py-6 text-xl">In my free time, I strive for balance in all aspects of life. You'll often find me experimenting in the kitchen, tending to my garden, or staying active and fit.</p>
+                <p className="py-6 text-xl">In my free time, I strive for balance in all aspects of life. You&apos;ll often find me experimenting in the kitchen, tending to my garden, or staying active and fit.</p>
               </div>
             </div>
           </div>
