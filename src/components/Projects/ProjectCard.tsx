@@ -3,7 +3,13 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function ProjectCard({ project }) {
+import { Project } from '../../types/project';
+
+interface Props {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: Props) {
   const [isActive, setIsActive] = useState(false);
 
   const handleToggle = () => {

@@ -1,6 +1,12 @@
 import Image from 'next/image';
 
-export default function DetailedCard({ project }) {
+import { Project } from '../../types/project';
+
+interface Props {
+  project: Project;
+}
+
+export default function DetailedCard({ project }: Props) {
 
   return (
     <div key={project.id} 
@@ -16,7 +22,7 @@ export default function DetailedCard({ project }) {
         />
         {project.url && 
           (
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded">
+            <a href={project.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded">
               Visit {project.title}
             </a>
           )
