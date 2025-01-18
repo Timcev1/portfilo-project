@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Header from '../components/main/Header';
 import Footer from '../components/main/Footer';
-import i18n from 'i18next';
+//import i18n from 'i18next';
 
 //import './i18n'; // Ensure this path matches where you've saved your i18n file
 

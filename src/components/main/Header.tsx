@@ -1,5 +1,5 @@
 import ThemeToggle from '../header/ThemeToggle';
-import LanguageSwitcher from '../header/LanguageSwitcher';
+//import LanguageSwitcher from '../header/LanguageSwitcher';
 
 
 export default function header() {
