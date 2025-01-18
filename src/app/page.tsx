@@ -6,12 +6,20 @@ import ResumeBtn from "../components/misc/Resume";
 import SkillBullets from "../components/misc/skillBulletList";
 
 
-import frontEnd from '../data/frontEnd.json';
-import backEnd from '../data/backend.json';
-import misc from '../data/misc.json';
+import frontEndData from '../data/frontEnd.json';
+import backEndData from '../data/backend.json';
+import miscData from '../data/misc.json';
+
+import { SkillSet } from '../types/skillSets';
+
+
+const frontEnd: SkillSet[] = frontEndData as SkillSet[];
+const backEnd: SkillSet[] = backEndData as SkillSet[];
+const misc: SkillSet[] = miscData as SkillSet[];
 
 
 export default function Home() {
+  
   return (
       <main className="p-4 flex flex-col gap-8 row-start-2 items-center ">
         <div className="h-100">

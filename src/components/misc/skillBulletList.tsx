@@ -1,15 +1,10 @@
 import React from 'react';
 
-interface skillSet {
-  id: number;
-  name: string;
-  skill: string;
-  level: 'Beginner' | 'Intermediate' | 'Expert';
-  url: string;
-}
+import { SkillSet } from '../../types/skillSets';
+
 
 interface Props {
-  skillSets: skillSet[];
+  skillSets: SkillSet[];
 }
 
 export default function ProjectList({ skillSets }: Props) {
