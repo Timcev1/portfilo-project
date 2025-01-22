@@ -48,5 +48,26 @@
         "id":10,
         "skill": "Agile",
         "level":"Expert"
+    },
+    {
+        "id":11,
+        "skill": "Teamwork",
+        "level":"Expert"
+    },
+    {
+        "id":12,
+        "skill": "Leadership",
+        "level":"Expert"
+    },
+    {
+        "id":13,
+        "skill": "Time Management",
+        "level":"Expert"
+    },
+    
+    {
+        "id":14,
+        "skill": "Docker",
+        "level":"Intermediate"
     }
 ]

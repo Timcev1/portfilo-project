@@ -12,10 +12,10 @@ export default function footer() {
             <div className="flex items-center justify-center gap-6 flex-wrap grow">
                 
                 <div className="flex gap-4">
-                    <a href="https://www.linkedin.com/in/timothy-cevallos/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/timothy-cevallos/" target="_blank" rel="noopener noreferrer" aria-label="Check out my LinkedIn">
                         <FaLinkedin size={30} />
                     </a>
-                    <a href="https://github.com/timcev1" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/timcev1" target="_blank" rel="noopener noreferrer" aria-label="Check out my Github">
                         <FaGithub size={30} />
                     </a>
                 </div>

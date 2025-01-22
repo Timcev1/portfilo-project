@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Header from '../components/main/Header';
 import Footer from '../components/main/Footer';
-//import i18n from 'i18next';
+import BaseHead from '../components/main/Head';
 
-//import './i18n'; // Ensure this path matches where you've saved your i18n file
+
+import { ImageResponse } from 'next/og'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +27,29 @@ const geistMono = Geist_Mono({
       }
     })();
   `;
-
-export const metadata: Metadata = {
-  title: "Cevallos Systems",
-  description: "Creating full stack web solutions for anyone needing a digital presence",
-};
+  export const metadata = {
+    applicationName: 'Cevallos Systems',
+    title: {
+      default: 'Cevallos Systems',
+      template: '%s | Cevallos Systems'
+    },
+    referrer: 'origin-when-cross-origin',
+    icons: {
+      icon: '/images/c-systems-logo.png'
+    },
+    authors: [{ name: 'Timothy C', url: 'https://cevallossystems.com' }],
+    creator: 'Timothy Cevallos',
+    publisher: 'Timothy Cevallos',  
+    keywords: ["Developer", "Web Developer"],
+    openGraph: {
+      title: {
+        default: 'Cevallos Systems - Welcome',
+        template: '%s - Cevallos Systems'
+      },
+      description: 'Creating full stack web solutions for anyone needing a digital presence',
+      images: 'https://cevallossystems.com/images/c-systems-logo.png',
+    }
+  }
 
 export default function RootLayout({
   children,
@@ -39,6 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <BaseHead />
+      </head>
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

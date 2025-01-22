@@ -18,7 +18,7 @@ export default function ProjectList({ skillSets }: Props) {
     <div className="my-4">
       <ul className="flex flex-wrap flex-1 gap-4">
         {skillSets.map((skillSet) => (
-          <li key={skillSet.id} className={` ${levelColors[skillSet.level]} self-center font-bold p-2 text-xs text-black rounded`}>
+          <li key={skillSet.id} className={` ${levelColors[skillSet.level]} self-center font-bold p-2 text-xs text-black rounded transition-transform duration-300 transform hover:scale-105`}>
             <h3 className="text-lg font-semibold">{skillSet.skill}</h3>
           </li>
         ))}

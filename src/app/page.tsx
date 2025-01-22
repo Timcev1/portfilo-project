@@ -24,7 +24,7 @@ export default function Home() {
       <main className="p-4 flex flex-col gap-8 row-start-2 items-center ">
         <div className="h-100">
           <div className="flex">
-            <div className="p-8 name max-w-screen-xl  mx-auto">
+            <div className="p-4 sm:p-8 name max-w-screen-xl  mx-auto">
               <p className="text-6xl bold font-[family-name:var(--font-geist-mono)]">Timothy<br></br> Cevallos</p>
               <h1 className="mt-10 mb-2 text-lg font-[family-name:var(--font-geist-mono)]">Comprehensive Website Solutions: Development, Deployment, and Maintenance Tailored to Your Needs, Big or Small.</h1>
               <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             
           </section>
-          <section className="p-4 flex gap-4 flex-row my-12 max-w-screen-xl mx-auto">
+          <section className="p-4 flex gap-4 flex-row my:8 sm:my-12 max-w-screen-xl mx-auto">
             <div className="grow flex-1">
               
             <div className="shrink flex-1">

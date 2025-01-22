@@ -10,7 +10,7 @@ export default function DetailedCard({ project }: Props) {
 
   return (
     <div key={project.id} 
-      className="flex flex-wrap relative group shadow-md p-4 rounded-lg overflow-hidden align-left"
+      className="flex flex-wrap relative group shadow-md p-4 rounded-lg overflow-hidden align-left justify-center"
     >
       <div className="min-w-80 max-w-96">
         <Image 
@@ -18,7 +18,7 @@ export default function DetailedCard({ project }: Props) {
             alt={`Screenshot of ${project.title}`}
             width={project.width}
             height={project.height}
-            className="rounded"
+            className="rounded m-auto"
         />
         {project.url && 
           (
