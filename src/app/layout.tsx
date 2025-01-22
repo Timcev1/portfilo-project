@@ -4,10 +4,6 @@ import Header from '../components/main/Header';
 import Footer from '../components/main/Footer';
 import BaseHead from '../components/main/Head';
 
-
-import { ImageResponse } from 'next/og'
-
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
