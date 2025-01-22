@@ -141,29 +141,5 @@
         "Cpanel"
       ],
       "url" : "https://www.islandpaintinginc.com/"
-    },
-    
-   
-    
-    {
-      "id": 6,
-      "category": "Websites",
-      "title": "Environmental Landscaping",
-      "image": "/images/home/Environmental-landscaping-md.jpg",
-      "description": "Small local landscape business built according to clients like. Backend is WordPress and I have a few plugins running to optimize speed as well as tracking.",
-      "width": 300,
-      "height": 300,
-      "technologies" : [
-        "WordPress",
-        "JavaScript",
-        "PHP",
-        "HTML",
-        "CSS",
-        "Jquery",
-        "Meta API",
-        "MySQL",
-        "Cpanel"
-      ],
-      "url" : "https://www.environaples.com/"
     }
   ]
