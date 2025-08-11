@@ -1,57 +1,54 @@
 'use client';
 
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { FaChevronDown } from 'react-icons/fa';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { LANGUAGE_LABELS, SUPPORTED_LOCALES } from '@/lib/constants';
 
-export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
+export default function LanguageSwitcher({ locale }: { locale: string }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [selectedLocale, setSelectedLocale] = useState(locale);
 
-  const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-    // Add more languages here
-  ];
+  useEffect(() => {
+    const savedLocale = localStorage.getItem('locale');
 
-  const handleLanguageChange = (code: string) => {
-    i18n.changeLanguage(code); // Change the language
-    setIsOpen(false); // Close the dropdown
+    const segments = pathname.split('/');
+    const isAlreadyLocalized = SUPPORTED_LOCALES.includes(segments[1] as typeof SUPPORTED_LOCALES[number]);
+
+    if (savedLocale && !isAlreadyLocalized) {
+      segments[1] = savedLocale;
+      router.replace(segments.join('/'));
+    }
+  }, [pathname, router]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const nextLocale = e.target.value;
+    setSelectedLocale(nextLocale);
+    localStorage.setItem('locale', nextLocale);
+
+    const segments = pathname.split('/');
+    segments[1] = nextLocale;
+    router.replace(segments.join('/'));
   };
 
   return (
-    <div className="relative inline-block">
-      {/* Dropdown Button */}
-      <button
-        className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-sky-200 rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-        aria-label="Select Language"
+    <div className="transition-opacity duration-300 ease-in-out opacity-100">
+      <label htmlFor="locale" className="sr-only">
+        Language
+      </label>
+      <select
+        id="locale"
+        onChange={handleChange}
+        value={selectedLocale}
+        className="border rounded px-3 py-1 text-sm bg-white dark:bg-gray-800 text-black dark:text-white focus:ring focus:ring-sky-400"
+        aria-label="Language"
       >
-        Language <FaChevronDown
-          className={`ml-2 transform transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : 'rotate-0'
-          }`}
-        />
-      </button>
-
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div
-          className="absolute right-0 mt-2 bg-white border rounded shadow-md dark:bg-gray-800 dark:border-gray-700"
-          role="menu"
-        >
-          {languages.map(({ code, name }) => (
-            <button
-              key={code}
-              className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-600"
-              onClick={() => handleLanguageChange(code)}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-      )}
+        {Object.entries(LANGUAGE_LABELS).map(([code, label]) => (
+          <option key={code} value={code}>
+            {label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

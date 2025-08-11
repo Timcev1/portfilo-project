@@ -1,12 +1,16 @@
 import type { NextConfig } from "next";
-const { i18n } = require('./next-i18next.config');
+import createNextIntlPlugin from 'next-intl/plugin';
+
+
+const withNextIntl = createNextIntlPlugin({
+
+});
 
 const nextConfig: NextConfig = {
-  i18n,
   reactStrictMode: true,
   images: {
     formats: ['image/webp', 'image/avif'], // Specify supported formats
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

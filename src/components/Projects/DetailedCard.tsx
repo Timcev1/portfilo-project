@@ -18,6 +18,7 @@ export default function DetailedCard({ project }: Props) {
             alt={`Screenshot of ${project.title}`}
             width={project.width}
             height={project.height}
+            style={{ height: 'auto' }}
             className="rounded m-auto"
         />
         {project.url && 

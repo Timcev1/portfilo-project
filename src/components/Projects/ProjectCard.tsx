@@ -29,6 +29,7 @@ export default function ProjectCard({ project }: Props) {
             alt={`Screenshot of ${project.title}`}
             width={project.width}
             height={project.height}
+            style={{ height: 'auto' }}
             className="rounded transition-transform duration-300 transform group-hover:scale-105"
         />
         <h3 className="projectTitle text-xl font-semibold text-center text-black dark:text-white">{project.title}</h3>

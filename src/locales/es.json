@@ -1,0 +1,27 @@
+{
+  "languageSwitcherLabel": "Espanol",
+  "name": "Timothy Cevallos",
+  "headline": "Soluciones Web Integrales: Desarrollo, Implementación y Mantenimiento Adaptados a Tus Necesidades, Grandes o Pequeñas.",
+  "summary": [
+    "Más de 7 años de experiencia creando y mejorando sitios web, generando resultados que impulsan el éxito.",
+    "Éxito comprobado en la gestión de sitios con alto tráfico y cientos de miles de visitantes diarios",
+    "Desarrollador versátil con habilidades en frontend y backend en diversos lenguajes."
+  ],
+  "aboutTitle": "Sobre Mí",
+  "aboutDescription1": "Soy un desarrollador web full-stack autodidacta con amplia experiencia en el desarrollo de aplicaciones web e interfaces de usuario responsivas. Me encanta resolver problemas de cualquier escala, siempre encontrando soluciones incluso a los desafíos más complejos.",
+  "aboutDescription2": "En mi tiempo libre, busco el equilibrio en todos los aspectos de la vida. Me encontrarás experimentando en la cocina, cuidando mi jardín o manteniéndome activo y en forma.",
+  "fitTitle": "¿Soy el indicado para ti?",
+  "fitDescription": "Explora un resumen de mis habilidades tecnológicas — esta lista no es exhaustiva pero destaca mi experiencia. Si no se menciona una tecnología específica, no te preocupes: aprendo rápido y me adapto a lo que necesites.",
+  "frontend": "Habilidades Frontend",
+  "backend": "Habilidades Backend",
+  "misc": "Habilidades Variadas",
+  "colorCode": "Código de Colores",
+  "colorNote": "El color indica el nivel de conocimiento.",
+  "expert": "- Experto",
+  "intermediate": "- Intermedio",
+  "beginner": "- Principiante",
+  "workTitle": "Resumen de Experiencia Profesional",
+  "workSummary": "Experto en liderar desarrollos full-stack, optimizar infraestructura backend y aprovechar WordPress y WooCommerce para crear funcionalidades personalizadas. Habilidad comprobada para mejorar la experiencia del usuario mediante actualizaciones web centradas en móviles e integración multimedia fluida. Experiencia en soluciones web de alto rendimiento usando tecnologías modernas como Alpine JS, Tailwind CSS, PHP y Laravel. Capacidad para acortar tiempos de entrega, resolver problemas de rendimiento y alinear las soluciones técnicas con los objetivos del negocio.",
+  "examplesTitle": "Ejemplos Públicos de Trabajo",
+  "projectInfo": "Información del Proyecto"
+}

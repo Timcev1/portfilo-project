@@ -1,0 +1,27 @@
+{
+  "languageSwitcherLabel": "English",
+  "name": "Timothy Cevallos",
+  "headline": "Comprehensive Web Solutions: Development, Implementation, and Maintenance Tailored to Your Needs, Big or Small.",
+  "summary": [
+    "Over 7 years of experience creating and improving websites, delivering results that drive success.",
+    "Proven success managing high-traffic sites with hundreds of thousands of daily visitors.",
+    "Versatile developer with frontend and backend skills across multiple languages."
+  ],
+  "aboutTitle": "About Me",
+  "aboutDescription1": "I’m a self-taught full-stack web developer with extensive experience in building web applications and responsive user interfaces. I love solving problems of any scale and always find solutions, even to the most complex challenges.",
+  "aboutDescription2": "In my free time, I seek balance in all aspects of life. You’ll find me experimenting in the kitchen, tending to my garden, or staying active and fit.",
+  "fitTitle": "Am I the Right Fit for You?",
+  "fitDescription": "Explore a summary of my technical skills — this list is not exhaustive but highlights my experience. If a specific technology isn’t listed, don’t worry: I’m a fast learner and adapt to your needs.",
+  "frontend": "Frontend Skills",
+  "backend": "Backend Skills",
+  "misc": "Miscellaneous Skills",
+  "colorCode": "Color Code",
+  "colorNote": "The color indicates the level of knowledge.",
+  "expert": "- Expert",
+  "intermediate": "- Intermediate",
+  "beginner": "- Beginner",
+  "workTitle": "Professional Experience Summary",
+  "workSummary": "Expert in leading full-stack development, optimizing backend infrastructure, and leveraging WordPress and WooCommerce for custom functionality. Proven ability to enhance user experience through mobile-focused updates and seamless multimedia integration. Experienced in high-performance web solutions using modern technologies like Alpine JS, Tailwind CSS, PHP, and Laravel. Skilled at reducing delivery timelines, resolving performance issues, and aligning technical solutions with business goals.",
+  "examplesTitle": "Public Work Examples",
+  "projectInfo": "Project Information"
+}

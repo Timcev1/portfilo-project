@@ -8,13 +8,13 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",            // ✅ FIXED
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["react", "react-dom", "react-i18next"],
+    "types": ["next", "react", "react-dom", "next-intl"], // ✅ optionally add
     "plugins": [
       {
         "name": "next"
@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./components/*"]
-    },
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
