@@ -1,15 +1,83 @@
 {
   "languageSwitcherLabel": "Espanol",
-  "name": "Timothy Cevallos",
-  "headline": "Soluciones Web Integrales: Desarrollo, Implementación y Mantenimiento Adaptados a Tus Necesidades, Grandes o Pequeñas.",
+  "nav": {
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "skipToContent": "Ir al contenido"
+  },
+  "hero": {
+    "name": "Timothy Cevallos",
+    "headline": "Soluciones Web Integrales: Desarrollo, Implementación y Mantenimiento Adaptados a Tus Necesidades, Grandes o Pequeñas.",
+    "imageAlt": "Ilustración de desarrollador",
+    "summary": [
+      "Construyo aplicaciones web rápidas y escalables",
+      "Enfocado en experiencia de desarrollo, rendimiento y accesibilidad",
+      "Entregas puntuales con código limpio"
+    ],
+    "stats": {
+      "years": { "value": "7+", "label": "Años de experiencia" },
+      "visitors": { "value": "100k+", "label": "Visitantes diarios" },
+      "projects": { "value": "50+", "label": "Proyectos" }
+    },
+    "about": {
+      "title": "Sobre mí",
+      "description1": "Soy un desarrollador web full-stack autodidacta con amplia experiencia en el desarrollo de aplicaciones web e interfaces de usuario responsivas. Me encanta resolver problemas de cualquier escala, siempre encontrando soluciones incluso a los desafíos más complejos.",
+      "description2": "En mi tiempo libre, busco el equilibrio en todos los aspectos de la vida. Me encontrarás experimentando en la cocina, cuidando mi jardín o manteniéndome activo y en forma."
+    },
+    "services": {
+      "frontend": { "title": "Frontend", "desc": "React, Next.js, TailwindCSS" },
+      "backend": { "title": "Backend", "desc": "PHP, Laravel, WordPress" },
+      "mobile": { "title": "Diseño adaptable", "desc": "Mobile-First, responsive design" },
+      "uiux": { "title": "UI/UX", "desc": "Interfaces modernas" }
+    },
+    "cta": {
+      "title": "¿Listo para trabajar juntos?",
+      "subtitle": "Construyamos algo increíble"
+    }
+  },
+  "resume": {
+    "buttonText": "Ver mi currículum"
+  },
   "summary": [
     "Más de 7 años de experiencia creando y mejorando sitios web, generando resultados que impulsan el éxito.",
     "Éxito comprobado en la gestión de sitios con alto tráfico y cientos de miles de visitantes diarios",
     "Desarrollador versátil con habilidades en frontend y backend en diversos lenguajes."
   ],
-  "aboutTitle": "Sobre Mí",
-  "aboutDescription1": "Soy un desarrollador web full-stack autodidacta con amplia experiencia en el desarrollo de aplicaciones web e interfaces de usuario responsivas. Me encanta resolver problemas de cualquier escala, siempre encontrando soluciones incluso a los desafíos más complejos.",
-  "aboutDescription2": "En mi tiempo libre, busco el equilibrio en todos los aspectos de la vida. Me encontrarás experimentando en la cocina, cuidando mi jardín o manteniéndome activo y en forma.",
+  "home": {
+    "workTitle": "Experiencia Profesional",
+    "workSummary": "He liderado y lanzado proyectos de alto impacto en frontend, backend y plataformas, priorizando rendimiento, accesibilidad y DX.",
+    "examplesTitle": "Proyectos Seleccionados",
+    "examplesSubtitle": "Soluciones web que impulsan el éxito del negocio y la participación de los usuarios"
+  },
+ "skills": {
+    "fitTitle": "Ajuste de habilidades",
+    "fitDescription": "Una vista rápida de mis áreas más fuertes hoy.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Tecnologías y frameworks modernos para interfaces atractivas"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Tecnologías robustas para aplicaciones escalables y seguras"
+      },
+      "misc": {
+        "title": "Varios",
+        "description": "Herramientas y metodologías adicionales para un flujo de trabajo completo"
+      }
+    },
+    "legend": {
+      "title": "Código de color",
+      "note": "Indica el nivel de dominio"
+    },
+    "levels": {
+      "expert": "Experto",
+      "intermediate": "Intermedio",
+      "beginner": "Principiante"
+    }
+  },
   "fitTitle": "¿Soy el indicado para ti?",
   "fitDescription": "Explora un resumen de mis habilidades tecnológicas — esta lista no es exhaustiva pero destaca mi experiencia. Si no se menciona una tecnología específica, no te preocupes: aprendo rápido y me adapto a lo que necesites.",
   "frontend": "Habilidades Frontend",
@@ -23,5 +91,99 @@
   "workTitle": "Resumen de Experiencia Profesional",
   "workSummary": "Experto en liderar desarrollos full-stack, optimizar infraestructura backend y aprovechar WordPress y WooCommerce para crear funcionalidades personalizadas. Habilidad comprobada para mejorar la experiencia del usuario mediante actualizaciones web centradas en móviles e integración multimedia fluida. Experiencia en soluciones web de alto rendimiento usando tecnologías modernas como Alpine JS, Tailwind CSS, PHP y Laravel. Capacidad para acortar tiempos de entrega, resolver problemas de rendimiento y alinear las soluciones técnicas con los objetivos del negocio.",
   "examplesTitle": "Ejemplos Públicos de Trabajo",
-  "projectInfo": "Información del Proyecto"
+  "projectInfo": "Información del Proyecto",
+  "projects": {
+    "imageAlt": "vista previa del proyecto",
+    "highlight": "Destacado del proyecto",
+    "viewDetails": "Ver detalles",
+    "liveSite": "Sitio en vivo",
+    "techStack": "Tecnologías",
+    "more": "más",
+    "learnMore": "Saber más",
+    "modalTitle": "Detalles del proyecto",
+    "close": "Cerrar",
+    "overview": "Descripción general",
+    "keyFeatures": "Características clave",
+    "techUsed": "Tecnologías utilizadas",
+    "impact": "Impacto del proyecto",
+    "ux": "Experiencia de usuario",
+    "uxNote": "Usabilidad mejorada",
+    "performance": "Rendimiento",
+    "performanceNote": "Carga optimizada"
+  },
+  "badges": {
+    "enterprise": "Empresarial",
+    "pwa": "Aplicación PWA",
+    "highTraffic": "Alto tráfico",
+    "customBuild": "Construcción a medida"
+  },
+  "nielsen": {
+    "description": "Desarrollé bloques dinámicos de Gutenberg para mejorar las capacidades del editor, incluido un bloque personalizado de Chart.js que ingería datos de Google Sheets para visualización en tiempo real. Mejoré el rendimiento, la accesibilidad y la usabilidad general de la plataforma.",
+    "indepth": "Aproveché Alpine.js y Tailwind CSS para crear interfaces de usuario dinámicas y responsivas. Colaboré con los responsables de producto para alinear las características técnicas con las necesidades del negocio. Implementé pruebas exhaustivas en múltiples navegadores y dispositivos para garantizar la fiabilidad, además de optimizar las APIs para mejorar la búsqueda de contenido y el manejo de tipos de publicaciones personalizadas.",
+    "bullets": [
+      "Construí un bloque personalizado de Gutenberg que permitió una visualización dinámica de datos, reduciendo el tiempo de implementación de semanas a minutos.",
+      "Automatización de la creación de gráficos desde Google Sheets para acelerar la producción de contenido y reducir el trabajo manual de los editores.",
+      "Mejoré la API de búsqueda para aumentar la precisión de los resultados en múltiples tipos de publicaciones personalizadas.",
+      "Optimizé la velocidad del sitio y la accesibilidad mediante ajustes de rendimiento y refactorización."
+    ]
+  },
+  "learnAthleanx": {
+    "description": "Gestioné el desarrollo full-stack de un blog de WordPress de alto tráfico con un sistema de carrito personalizado basado en JavaScript. Mejoré la usabilidad, el rendimiento y los flujos editoriales mediante temas, plugins e integraciones personalizados.",
+    "indepth": "Construí y mantuve un backend totalmente personalizado en WordPress con temas y plugins propios que sirven a miles de visitantes diarios. Implementé sistemas de seguimiento personalizados, herramientas promocionales y optimizaciones de rendimiento. Los diseños se realizaron a partir de maquetas PSD entregando páginas responsivas de alta fidelidad.",
+    "bullets": [
+      "Desarrollé mejoras en el editor de WordPress para optimizar la creación de blogs y el flujo editorial.",
+      "Reduje los tiempos de carga y mejoré las puntuaciones de Lighthouse optimizando recursos, scripts y consultas.",
+      "Integré APIs de marketing y analíticas para impulsar promociones y campañas personalizadas.",
+      "Transición de flujos de trabajo basados en SVN hacia Git para un control de versiones más moderno."
+    ]
+  },
+  "athleanx": {
+    "description": "Desarrollé un backend personalizado con Laravel para un sistema de carrito y productos totalmente a medida. Optimizado para el rendimiento, la escalabilidad y experiencias de comercio electrónico centradas en el usuario.",
+    "indepth": "Implementé una configuración híbrida con Laravel manejando la lógica de comercio electrónico y WordPress alimentando el blog. Diseñé y programé temas y plugins personalizados para manejar el tráfico a gran escala. Optimicé consultas de base de datos, scripts frontend y configuraciones de servidor para miles de visitantes diarios.",
+    "bullets": [
+      "Construí flujos de carrito y pago escalables con Laravel.",
+      "Optimicé CSS, JS y funciones de tema, mejorando el rendimiento en más de 20 puntos.",
+      "Mantuve un flujo de trabajo basado en SVN antes de la transición a Git y Composer.",
+      "Desarrollé sistemas de seguimiento y analítica promocional integrados con APIs."
+    ]
+  },
+  "athleanxPortal": {
+    "description": "Construí y mantuve una aplicación web personalizada con MVC utilizando Zend Framework 1, incluyendo una API propia para soporte y comunicación entre servidores. Rediseñé y modernicé todo el portal hacia una aplicación progresiva orientada a móviles.",
+    "indepth": "El portal sirve como sistema de entrega digital de los productos Athlean-X, gestionando miles de usuarios autenticados. Convertí una experiencia orientada a escritorio en una aplicación progresiva responsiva y móvil con capacidades offline. Entregué funciones complejas dentro de la arquitectura MVC, gestionando modelos, controladores y vistas.",
+    "bullets": [
+      "Rediseñé el portal como una aplicación progresiva con soporte offline.",
+      "Desarrollé integraciones API personalizadas para comunicación segura entre servidores.",
+      "Implementé una arquitectura móvil primero y diseño responsivo.",
+      "Mantuve y extendí funcionalidades en un equipo de dos desarrolladores."
+    ]
+  },
+  "antamba": {
+    "description": "Construí un sitio de comercio electrónico totalmente personalizado con WooCommerce para un cliente, manejando diseño, funcionalidad y optimización de principio a fin. Integrado con Google y Meta para seguimiento y publicidad.",
+    "indepth": "Desarrollé una tienda WooCommerce responsiva como la principal plataforma de ventas del cliente. Implementé buenas prácticas de SEO, optimicé imágenes y recursos, y configuré integraciones de marketing para maximizar alcance y conversiones.",
+    "bullets": [
+      "Integré Google Analytics y Facebook Pixel para un seguimiento completo.",
+      "Optimizé imágenes, caché y SEO para aumentar visibilidad y conversiones.",
+      "Entregué temas y componentes personalizados para una experiencia de compra adaptada."
+    ]
+  },
+  "islandPainting": {
+    "description": "Diseñé y desarrollé un sitio promocional en WordPress para un negocio local, optimizando rendimiento y seguimiento para la generación de clientes potenciales.",
+    "indepth": "Configuré WordPress con plugins ligeros y optimizaciones personalizadas para lograr tiempos de carga rápidos. Añadí seguimiento con Google Analytics y mejoras de SEO para aumentar la visibilidad.",
+    "bullets": [
+      "Desarrollé plantillas responsivas adaptadas para la promoción de servicios locales.",
+      "Integré Google Analytics para el seguimiento de clientes potenciales y análisis de rendimiento.",
+      "Apliqué prácticas de SEO para mejorar el posicionamiento en buscadores."
+    ]
+  },
+  "bikerevier": {
+    "description": "Rediseñé y optimicé un sitio de WordPress con WooCommerce para una tienda de bicicletas en Suiza. Mejoré la responsividad, modernicé el diseño y optimicé la experiencia de compra para aumentar conversiones.",
+    "indepth": "Entregué un rediseño móvil primero con CSS personalizado, Elementor y optimización de plugins. Mejoré los flujos de pago, la presentación de productos y el rendimiento general para aumentar la usabilidad y las ventas.",
+    "bullets": [
+      "Rediseñé la interfaz con layouts modernos y responsivos.",
+      "Mejoré las páginas de producto y la experiencia de pago para impulsar conversiones.",
+      "Optimizé para rendimiento móvil en todos los dispositivos.",
+      "Implementé estrategias de SEO para mayor visibilidad en el mercado suizo."
+    ]
+  }
+
 }

@@ -10,9 +10,7 @@ function isSupportedLocale(locale: string): locale is Locale {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  console.log('🔥 Middleware running on:', pathname);
-
-  // Skip next for static files or API
+  // Skip static files or API
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
@@ -21,36 +19,29 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const firstSegment = pathname.split('/')[1];
+  const segments = pathname.split('/'); // e.g. ['', 'about'] or ['', 'en', 'about']
+  const firstSegment = segments[1] || '';
   const isKnownLocale = isSupportedLocale(firstSegment);
   const isLocaleLike = /^[a-z]{2}$/.test(firstSegment);
 
-  console.log('🌍 First segment:', firstSegment);
-  console.log('✅ isKnownLocale:', isKnownLocale);
-  console.log('🔤 isLocaleLike:', isLocaleLike);
-
-  // ✅ Allow if already has supported locale
+  // ✅ Already has a supported locale: proceed
   if (isKnownLocale) {
     return NextResponse.next();
   }
 
-  // ❌ Invalid locale (e.g., `/xx`)
+  // ❌ Looks like a locale but unsupported -> redirect to default + rest of path
   if (isLocaleLike && !isKnownLocale) {
     const url = request.nextUrl.clone();
-    url.pathname = `/${DEFAULT_LOCALE}`;
+    // drop the invalid first segment and keep the rest
+    const rest = '/' + segments.slice(2).join('/');
+    url.pathname = `/${DEFAULT_LOCALE}${rest === '/' ? '' : rest}`;
     return NextResponse.redirect(url);
   }
 
-  // 🛑 Prevent double-rewrites:
-  // If the path is just `/`, we rewrite to `/<default>`
-  if (pathname === '/') {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${DEFAULT_LOCALE}`;
-    return NextResponse.rewrite(url);
-  }
-
-  // Leave all other routes alone — don't rewrite
-  return NextResponse.next();
+  // 🧭 No locale segment at all -> rewrite to default + full path
+  const url = request.nextUrl.clone();
+  url.pathname = `/${DEFAULT_LOCALE}${pathname === '/' ? '' : pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {

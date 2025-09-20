@@ -1,13 +1,13 @@
 export type Project = {
-    id: number;
-    title?: string;
-    category: string;
-    image: string;
-    url?: string;
-    width: number;
-    height: number;
-    description: string;
-    technologies: string[];
-    bullets?: string[];
-    indepth?: string;
-  };
+  id: number;
+  category: string;
+  title: string;
+  image: string;
+  description_key: string;
+  indepth_key: string;
+  bullets_key: string;
+  width: number;
+  height: number;
+  technologies: string[];
+  url: string;
+};

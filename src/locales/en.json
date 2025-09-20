@@ -1,27 +1,194 @@
 {
   "languageSwitcherLabel": "English",
-  "name": "Timothy Cevallos",
-  "headline": "Comprehensive Web Solutions: Development, Implementation, and Maintenance Tailored to Your Needs, Big or Small.",
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "name": "Timothy Cevallos",
+    "headline": "Comprehensive Web Solutions: Development, Implementation, and Maintenance Tailored to Your Needs, Big or Small.",
+    "imageAlt": "Developer illustration",
+    "summary": [
+      "I build fast, scalable web apps",
+      "Focus on UX, performance, and accessibility",
+      "Shipping on time with clean code"
+    ],
+    "stats": {
+      "years": { "value": "7+", "label": "Years Experience" },
+      "visitors": { "value": "100k+", "label": "Daily Visitors" },
+      "projects": { "value": "50+", "label": "Projects" }
+    },
+    "about": {
+      "title": "About Me",
+      "description1": "I’m a self-taught full-stack web developer with extensive experience in building web applications and responsive user interfaces. I love solving problems of any scale and always find solutions, even to the most complex challenges.",
+      "description2": "In my free time, I seek balance in all aspects of life. You’ll find me experimenting in the kitchen, tending to my garden, or staying active and fit."
+    },
+    "services": {
+      "frontend": { "title": "Frontend", "desc": "React, Next.js, TailwindCSS" },
+      "backend": { "title": "Backend", "desc": "PHP, Laravel, WordPress" },
+      "mobile": { "title": "Mobile-First", "desc": "Responsive Design" },
+      "uiux": { "title": "UI/UX", "desc": "Modern Interfaces" }
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "subtitle": "Let's build something amazing"
+    }
+  },
+  "resume": {
+    "buttonText": "View My Resume"
+  },
   "summary": [
     "Over 7 years of experience creating and improving websites, delivering results that drive success.",
     "Proven success managing high-traffic sites with hundreds of thousands of daily visitors.",
     "Versatile developer with frontend and backend skills across multiple languages."
   ],
-  "aboutTitle": "About Me",
-  "aboutDescription1": "I’m a self-taught full-stack web developer with extensive experience in building web applications and responsive user interfaces. I love solving problems of any scale and always find solutions, even to the most complex challenges.",
-  "aboutDescription2": "In my free time, I seek balance in all aspects of life. You’ll find me experimenting in the kitchen, tending to my garden, or staying active and fit.",
+  "home": {
+    "workTitle": "Work Experience",
+    "workSummary": "I’ve led and shipped high-impact projects across frontend, backend, and platform work—focusing on performance, accessibility, and DX.",
+    "examplesTitle": "Selected Projects",
+    "examplesSubtitle": "Showcasing impactful web solutions that drive business success and user engagement"
+  },
+  "skills": {
+    "fitTitle": "Skill Fit",
+    "fitDescription": "A quick overview of where I’m strongest today.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Modern frontend technologies and frameworks for creating beautiful user interfaces"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Robust backend technologies for scalable and secure server-side applications"
+      },
+      "misc": {
+        "title": "Misc",
+        "description": "Additional tools and methodologies for comprehensive development workflows"
+      }
+    },
+    "legend": {
+      "title": "Color code",
+      "note": "Indicates proficiency level"
+    },
+    "levels": {
+      "expert": "Expert",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    },
+    "expert": "Expert",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner",
+    "colorCode": "Color Code",
+    "colorNote": "The color indicates the level of knowledge.",
+    "misc": "Miscellaneous Skills",
+    "frontend": "Frontend Skills",
+    "backend": "Backend Skills"
+  },
   "fitTitle": "Am I the Right Fit for You?",
   "fitDescription": "Explore a summary of my technical skills — this list is not exhaustive but highlights my experience. If a specific technology isn’t listed, don’t worry: I’m a fast learner and adapt to your needs.",
-  "frontend": "Frontend Skills",
-  "backend": "Backend Skills",
-  "misc": "Miscellaneous Skills",
-  "colorCode": "Color Code",
-  "colorNote": "The color indicates the level of knowledge.",
+
+
   "expert": "- Expert",
   "intermediate": "- Intermediate",
   "beginner": "- Beginner",
   "workTitle": "Professional Experience Summary",
   "workSummary": "Expert in leading full-stack development, optimizing backend infrastructure, and leveraging WordPress and WooCommerce for custom functionality. Proven ability to enhance user experience through mobile-focused updates and seamless multimedia integration. Experienced in high-performance web solutions using modern technologies like Alpine JS, Tailwind CSS, PHP, and Laravel. Skilled at reducing delivery timelines, resolving performance issues, and aligning technical solutions with business goals.",
   "examplesTitle": "Public Work Examples",
-  "projectInfo": "Project Information"
+  "projectInfo": "Project Information",
+  "projects": {
+    "imageAlt": "project preview",
+    "highlight": "Project highlight",
+    "viewDetails": "View details",
+    "liveSite": "Live site",
+    "techStack": "Tech stack",
+    "more": "more",
+    "learnMore": "Learn more",
+    "modalTitle": "Project details",
+    "close": "Close",
+    "overview": "Project Overview",
+    "keyFeatures": "Key Features",
+    "techUsed": "Technologies Used",
+    "impact": "Project Impact",
+    "ux": "User Experience",
+    "uxNote": "Enhanced usability",
+    "performance": "Performance",
+    "performanceNote": "Optimized loading"
+  },
+  "badges": {
+    "enterprise": "Enterprise",
+    "pwa": "PWA App",
+    "highTraffic": "High Traffic",
+    "customBuild": "Custom Build"
+  },
+  "nielsen": {
+    "description": "Developed dynamic Gutenberg blocks to enhance editor capabilities, including a custom Chart.js block that ingested Google Sheets data for real-time visualization. Improved performance, accessibility, and overall usability across the platform.",
+    "indepth": "Leveraged Alpine.js and Tailwind CSS to craft dynamic, responsive user interfaces. Partnered with product owners to align technical features with business needs. Implemented robust testing strategies across browsers and devices to ensure reliability, while optimizing APIs for improved content search and handling of custom post types.",
+    "bullets": [
+      "Built a custom Gutenberg block enabling rapid dynamic data visualization, reducing implementation time from weeks to minutes.",
+      "Automated Google Sheets chart creation to accelerate content production and reduce manual workload for editors.",
+      "Enhanced search API to improve accuracy of results across multiple custom post types.",
+      "Optimized site speed and accessibility through performance tuning and refactoring."
+    ]
+  },
+  "learnAthleanx": {
+    "description": "Managed full-stack development of a high-traffic WordPress blog with a custom JavaScript-based cart system. Enhanced usability, performance, and editor workflows with custom themes, plugins, and integrations.",
+    "indepth": "Built and maintained a fully custom WordPress backend with in-house themes and plugins serving thousands of daily visitors. Implemented custom tracking systems, promotional tools, and performance optimizations. Designed from PSD mockups and delivered pixel-perfect responsive pages.",
+    "bullets": [
+      "Developed WordPress editor enhancements to streamline blog creation and editorial workflow.",
+      "Reduced page load times and improved Lighthouse scores by optimizing assets, scripts, and queries.",
+      "Integrated marketing APIs and analytics to drive personalized promotions and campaigns.",
+      "Transitioned from SVN to Git version control for more modern team workflows."
+    ]
+  },
+  "athleanx": {
+    "description": "Developed a custom Laravel-powered backend with a fully bespoke cart and product system. Optimized for performance, scalability, and user-friendly e-commerce experiences.",
+    "indepth": "Implemented a hybrid setup with Laravel handling custom e-commerce logic and WordPress powering the blog. Designed and coded custom themes and plugins to handle traffic at scale. Optimized database queries, frontend scripts, and server configurations to handle thousands of daily visitors.",
+    "bullets": [
+      "Built scalable, custom e-commerce cart and checkout flows using Laravel.",
+      "Optimized CSS, JS, and theme functions, improving performance by 20+ points.",
+      "Maintained SVN-based workflow before transitioning to Git and Composer.",
+      "Developed promotional tracking and analytics systems integrated with APIs."
+    ]
+  },
+  "athleanxPortal": {
+    "description": "Built and maintained a custom MVC web application using Zend Framework 1, including a proprietary API for support and cross-server communication. Redesigned and modernized the entire portal into a mobile-first progressive web application.",
+    "indepth": "The portal serves as the digital delivery system for Athlean-X products, handling thousands of authenticated users. Converted a desktop-first experience into a responsive, mobile-first PWA with offline capabilities. Delivered complex features within the MVC architecture, managing models, controllers, and views.",
+    "bullets": [
+      "Redesigned portal into a progressive web app with offline support.",
+      "Developed custom API integrations for secure cross-server communication.",
+      "Implemented responsive UI and mobile-first architecture.",
+      "Maintained and extended features in a two-person development team."
+    ]
+  },
+  "antamba": {
+    "description": "Built a fully custom WooCommerce e-commerce site for a client, handling design, functionality, and optimization from end to end. Integrated with Google and Meta for tracking and advertising.",
+    "indepth": "Developed a responsive WooCommerce storefront as the client’s primary sales platform. Implemented SEO best practices, optimized images and assets, and configured marketing integrations to maximize reach and conversions.",
+    "bullets": [
+      "Integrated Google Analytics and Facebook Pixel for complete tracking.",
+      "Optimized images, caching, and SEO to increase visibility and conversions.",
+      "Delivered custom themes and components for a tailored shopping experience."
+    ]
+  },
+  "islandPainting": {
+    "description": "Designed and developed a WordPress-based promotional site for a local business, optimizing performance and tracking for lead generation.",
+    "indepth": "Configured WordPress with lightweight plugins and custom optimizations to deliver fast load times. Added Google Analytics tracking and SEO improvements to boost discoverability.",
+    "bullets": [
+      "Developed responsive templates tailored for local service promotion.",
+      "Integrated Google Analytics for lead tracking and performance insights.",
+      "Applied SEO practices to improve search visibility."
+    ]
+  },
+  "bikerevier": {
+    "description": "Redesigned and optimized a WooCommerce-powered WordPress site for a bicycle shop in Switzerland. Improved responsiveness, modernized styling, and streamlined the shopping experience for better conversions.",
+    "indepth": "Delivered a mobile-first redesign with custom CSS, Elementor, and plugin optimizations. Improved checkout flows, product presentation, and overall performance to increase usability and sales.",
+    "bullets": [
+      "Redesigned UI with modern, responsive layouts.",
+      "Enhanced product pages and checkout experience to drive conversions.",
+      "Optimized for mobile-first performance across all devices.",
+      "Implemented SEO strategies for greater visibility in Swiss markets."
+    ]
+  }
+
 }

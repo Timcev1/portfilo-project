@@ -33,6 +33,46 @@
         "id":7,
         "skill": "Ruby on Rails",
         "level":"Beginner"
+    },
+    {
+        "id":8,
+        "skill": "Django",
+        "level":"Beginner"
+    },
+    {
+        "id":9,
+        "skill": "MySQL",
+        "level":"Expert"
+    },
+    {
+        "id":10,
+        "skill": "PostgreSQL",
+        "level":"Intermediate"
+    },
+    {
+        "id":11,
+        "skill": "RESTful APIs",
+        "level":"Expert"
+    },
+    {
+        "id":12,
+        "skill": "GraphQL",
+        "level":"Intermediate"
+    },
+    {
+        "id":13,
+        "skill": "AWS",
+        "level":"Intermediate"
+    },
+    {
+        "id":14,
+        "skill": "FASTAPI",
+        "level":"Intermediate"
+    },
+    {
+        "id":15,
+        "skill": "Nest.js",
+        "level":"Intermediate"
     }
 
 ]

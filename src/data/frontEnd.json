@@ -46,5 +46,15 @@
         "skill": "AlpineJS",
         "level": "Intermediate",
         "url": "https://alpinejs.dev/"
+    },
+    {
+        "id": 10,
+        "skill": "jQuery",
+        "level": "Expert"
+    },
+    {
+        "id": 11,
+        "skill": "Next.js",
+        "level": "Intermediate"
     }
 ]
