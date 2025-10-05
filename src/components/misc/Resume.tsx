@@ -25,7 +25,7 @@ export default function ResumeButton() {
           transition-all duration-300
         "
       >
-        {t('buttonText', 'View My Resume')}
+        {t('buttonText')}
       </a>
     </div>
   );

@@ -9,9 +9,16 @@ import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { SUPPORTED_LOCALES, Locale } from '@/lib/constants';
 
+// Proper type definition for Google reCAPTCHA v3
 declare global {
   interface Window {
-    grecaptcha: any;
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      render?: (container: string | HTMLElement, parameters: Record<string, unknown>) => number;
+      reset?: (widgetId?: number) => void;
+      getResponse?: (widgetId?: number) => string;
+    };
   }
 }
 
@@ -43,10 +50,10 @@ export const metadata = {
 
 export default async function Layout(props: {
   children: ReactNode;
-  params: Promise<{ locale: string }>; // <-- async params
+  params: Promise<{ locale: string }>;
 }) {
   const { children } = props;
-  const { locale } = await props.params; // <-- await before using
+  const { locale } = await props.params;
 
   if (!SUPPORTED_LOCALES.includes(locale as Locale)) {
     notFound();

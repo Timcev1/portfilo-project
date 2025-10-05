@@ -19,8 +19,10 @@ export default function ContactForm() {
     setStatus('loading');
 
     try {
-      const token = await window.grecaptcha.execute(  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-         { action: 'submit' });
+      const token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+        { action: 'submit' }
+      );
 
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -32,8 +34,9 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(data.message || 'Something went wrong');
 
       setStatus('success');
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
+      setError(errorMessage);
       setStatus('error');
     }
   };
@@ -44,9 +47,31 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input name="name" value={form.name} onChange={handleChange} placeholder={t('name')} required className="input" />
-      <input type="email" name="email" value={form.email} onChange={handleChange} placeholder={t('email')} required className="input" />
-      <textarea name="message" value={form.message} onChange={handleChange} placeholder={t('message')} required className="input" />
+      <input 
+        name="name" 
+        value={form.name} 
+        onChange={handleChange} 
+        placeholder={t('name')} 
+        required 
+        className="input" 
+      />
+      <input 
+        type="email" 
+        name="email" 
+        value={form.email} 
+        onChange={handleChange} 
+        placeholder={t('email')} 
+        required 
+        className="input" 
+      />
+      <textarea 
+        name="message" 
+        value={form.message} 
+        onChange={handleChange} 
+        placeholder={t('message')} 
+        required 
+        className="input" 
+      />
 
       {error && <p className="text-red-600">{error}</p>}
 

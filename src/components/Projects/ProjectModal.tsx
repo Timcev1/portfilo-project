@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, ReactNode } from 'react';
 import Image from 'next/image';
 import { X, ExternalLink, Users, Zap, CheckCircle } from 'lucide-react';
 import { useTranslations, useMessages } from 'next-intl';
 import type { Project } from '../../types/project';
+
+type TranslationValue = string | number | Date;
 
 interface Props {
   project: Project;
@@ -14,10 +16,12 @@ interface Props {
 
 // Small helper: returns the key (or provided fallback) if the message is missing
 function useSafeT(ns?: Parameters<typeof useTranslations>[0]) {
-  const t = useTranslations(ns as any);
-  return (key: string, fallback?: string, values?: Record<string, any>) => {
+  const t = useTranslations(ns);
+  return (key: string, fallback?: string, values?: Record<string, TranslationValue>): string => {
     try {
-      return t(key as any, values as any);
+      // next-intl's t returns string here; coerce defensively to string just in case
+      const result = values ? t(key, values) : t(key);
+      return typeof result === 'string' ? result : String(result);
     } catch {
       return fallback ?? key;
     }
@@ -25,10 +29,17 @@ function useSafeT(ns?: Parameters<typeof useTranslations>[0]) {
 }
 
 // Helper to access a deep value by dot-path from the messages object
-function getByPath(obj: any, path: string | undefined) {
+function getByPath(obj: unknown, path: string | undefined): unknown {
   if (!obj || !path) return undefined;
-  return path.split('.').reduce((o, k) => (o && k in o ? (o as any)[k] : undefined), obj);
+  return path.split('.').reduce<unknown>((o, k) => {
+    if (o && typeof o === 'object' && k in (o as Record<string, unknown>)) {
+      return (o as Record<string, unknown>)[k];
+    }
+    return undefined;
+  }, obj);
 }
+
+type Highlight = { text: string; color: string; icon: ReactNode };
 
 export default function ProjectModal({ project, isOpen, onClose }: Props) {
   const t = useSafeT();           // or useSafeT('projects') if you use a "projects" namespace
@@ -36,6 +47,17 @@ export default function ProjectModal({ project, isOpen, onClose }: Props) {
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Bullets: read arrays directly from messages; if a string, split it
+  // MUST be before any conditional returns to follow Rules of Hooks
+  const bullets = useMemo(() => {
+    const value = getByPath(messages, project.bullets_key);
+    if (Array.isArray(value)) return value.filter((v): v is string => typeof v === 'string');
+    if (typeof value === 'string') {
+      return value.split(/\r?\n|•/).map((s) => s.trim()).filter(Boolean);
+    }
+    return [];
+  }, [messages, project.bullets_key]);
 
   // Body scroll lock
   useEffect(() => {
@@ -60,9 +82,10 @@ export default function ProjectModal({ project, isOpen, onClose }: Props) {
     if (isOpen) closeBtnRef.current?.focus();
   }, [isOpen]);
 
+  // Early return AFTER all hooks
   if (!isOpen) return null;
 
-  const getHighlight = (title: string) => {
+  const getHighlight = (title: string): Highlight => {
     const lower = title.toLowerCase();
     if (lower.includes('nielsen'))
       return { text: t('badges.enterprise', 'Enterprise'), color: 'from-blue-500 to-cyan-400', icon: <Users className="w-5 h-5" /> };
@@ -76,18 +99,8 @@ export default function ProjectModal({ project, isOpen, onClose }: Props) {
   const highlight = getHighlight(project.title);
 
   // Copy from i18n with graceful fallbacks
-  const indepth = t(project.indepth_key, project.indepth_key) as string;
-  const description = t(project.description_key, project.description_key) as string;
-
-  // Bullets: read arrays directly from messages; if a string, split it
-  const bullets = useMemo(() => {
-    const value = getByPath(messages, project.bullets_key);
-    if (Array.isArray(value)) return value as string[];
-    if (typeof value === 'string') {
-      return value.split(/\r?\n|•/).map((s) => s.trim()).filter(Boolean);
-    }
-    return [];
-  }, [messages, project.bullets_key]);
+  const indepth = t(project.indepth_key, project.indepth_key);
+  const description = t(project.description_key, project.description_key);
 
   // Close when clicking backdrop only (not inner content)
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

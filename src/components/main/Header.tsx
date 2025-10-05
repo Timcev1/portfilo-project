@@ -10,24 +10,41 @@ const SECTIONS = ['about', 'skills', 'projects', 'contact'] as const;
 type SectionId = typeof SECTIONS[number];
 
 export default function Header({ locale: forcedLocale }: { locale?: string }) {
-  const locale = forcedLocale || useLocale();
-  const t = useTranslations('nav'); // add labels in your messages
-  const [active, setActive] = useState<SectionId | null>(null);
+  // Call hooks at top level, no conditionals/inline boolean tricks
+  const currentLocale = useLocale();
+  const locale = forcedLocale ?? currentLocale;
+
+  const t = useTranslations('nav');
+  const [active, setActive] = useState<SectionId>('about'); // Default to 'about'
   const [scrolled, setScrolled] = useState(false);
 
   // Scroll spy + shadow on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 4);
+
+      // If we're near the top, set 'about' as active
+      if (scrollY < 100) {
+        setActive('about');
+      }
+    };
+    
     onScroll();
     window.addEventListener('scroll', onScroll);
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id as SectionId);
+          if (entry.isIntersecting) {
+            setActive(entry.target.id as SectionId);
+          }
         });
       },
-      { rootMargin: '-50% 0px -45% 0px', threshold: 0.01 }
+      { 
+        rootMargin: '-20% 0px -60% 0px', // More lenient top margin
+        threshold: 0.01 
+      }
     );
 
     SECTIONS.forEach((id) => {
@@ -42,27 +59,26 @@ export default function Header({ locale: forcedLocale }: { locale?: string }) {
   }, []);
 
   const links = useMemo(
-    () => [
-      { id: 'about',    label: t('about') },
-      { id: 'skills',   label: t('skills') },
-      { id: 'projects', label: t('projects') },
-      { id: 'contact',  label: t('contact') },
-    ] as { id: SectionId; label: string }[],
+    () =>
+      [
+        { id: 'about', label: t('about') },
+        { id: 'skills', label: t('skills') },
+        { id: 'projects', label: t('projects') },
+      ] satisfies ReadonlyArray<{ id: SectionId; label: string }>,
     [t]
   );
 
   // Smooth scroll without losing locale segment
-  const handleJump = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleJump = (e: React.MouseEvent<HTMLAnchorElement>, id: SectionId) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', `/${locale}#${id}`); // keeps URL hash tidy
+    history.replaceState(null, '', `#${id}`);
   };
 
   return (
     <header
       className={[
         'sticky top-0 z-50',
-        // glass + border
         'bg-white/70 dark:bg-neutral-900/70',
         'backdrop-blur supports-[backdrop-filter]:backdrop-blur',
         'border-b border-black/5 dark:border-white/10',
@@ -75,23 +91,21 @@ export default function Header({ locale: forcedLocale }: { locale?: string }) {
         href={`/${locale}#content`}
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-black text-white px-3 py-2 rounded"
       >
-        {t('skipToContent', 'Skip to content')}
+        {t('skipToContent')}
       </a>
 
       <nav className="mx-auto max-w-screen-xl flex items-center justify-between px-4 py-3">
         {/* Left: brand or logo slot (optional) */}
-        <div className="flex items-center gap-2">
-          {/* put logo here if needed */}
-        </div>
+        <div className="flex items-center gap-2" />
 
         {/* Center: section nav */}
-        <ul className="hidden md:flex items-center gap-2 rounded-full bg-black/[0.03] dark:bg-white/5 px-2 py-1 border border-black/5 dark:border-white/10">
+        <ul className="hidden md:flex items-center gap-2 rounded-full px-2 py-1 ">
           {links.map((l) => {
             const isActive = active === l.id;
             return (
               <li key={l.id}>
                 <Link
-                  href={`/${locale}#${l.id}`}
+                  href={`#${l.id}`}
                   onClick={(e) => handleJump(e, l.id)}
                   className={[
                     'px-3 py-1.5 text-sm font-medium rounded-full transition-colors',

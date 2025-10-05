@@ -2,7 +2,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 import ProjectList from '../../components/Projects/ProjectList';
-import DetailedProjectsList from '../../components/Projects/DetailedProjects'; // if used elsewhere
 import ClientHero from '../../components/modern/ClientHero';
 import ModernSkills from '../../components/modern/ModernSkills';
 
@@ -19,7 +18,6 @@ const misc: SkillSet[] = miscData as SkillSet[];
 export default function Home() {
   // Page-level namespaces
   const tHome = useTranslations('home');     // work/explore sections
-  const tSkills = useTranslations('skills'); // labels for ModernSkills
   const locale = useLocale();
 
   return (
@@ -33,16 +31,6 @@ export default function Home() {
           frontEnd={frontEnd}
           backEnd={backEnd}
           misc={misc}
-          fitTitle={tSkills('fitTitle')}
-          fitDescription={tSkills('fitDescription')}
-          frontend={tSkills('frontend')}
-          backend={tSkills('backend')}
-          miscTitle={tSkills('misc')}
-          colorCode={tSkills('colorCode')}
-          colorNote={tSkills('colorNote')}
-          Expert={tSkills('expert')}
-          Intermediate={tSkills('intermediate')}
-          Beginner={tSkills('beginner')}
         />
       </section>
       {/* Work Experience Section */}

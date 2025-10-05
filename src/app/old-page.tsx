@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import ProjectList from "../components/Projects/ProjectList";
-import DetailedProjectsList from "../components/Projects/DetailedProjects";
 import ResumeBtn from "../components/misc/Resume";
 import SkillBullets from "../components/misc/skillBulletList";
 
@@ -104,7 +103,6 @@ aligning technical solutions with business objectives. Well-versed in driving op
         </section>
         <section className="mt-6 mx-auto sm:mt-12 max-w-screen-xl">
           <h2 className="text-3xl text-center bold">Project Information</h2>
-          <DetailedProjectsList />
         </section>
       </main>
   );

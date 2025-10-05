@@ -11,13 +11,16 @@ interface Props {
   onViewDetails: (project: Project) => void;
 }
 
+// Type for the translation function
+type TranslationFunction = (key: string, values?: Record<string, string | number>) => string;
+
 // Optional: if you split messages, pass a namespace like useTranslations('projects')
 // and then call safeT('imageAlt')
-function useSafeT(ns?: Parameters<typeof useTranslations>[0]) {
-  const t = useTranslations(ns as any);
-  return (key: string, fallback?: string, values?: Record<string, any>) => {
+function useSafeT(ns?: string) {
+  const t = useTranslations(ns) as TranslationFunction;
+  return (key: string, fallback?: string, values?: Record<string, string | number>) => {
     try {
-      return t(key as any, values as any);
+      return t(key, values);
     } catch {
       // If key is missing and provider isn't configured with getMessageFallback,
       // gracefully return provided fallback or the key itself
@@ -51,7 +54,7 @@ export default function ModernProjectCard({ project, onViewDetails }: Props) {
 
   // If your messages store descriptions by key, e.g. "projects.foo.description"
   // and your project.description_key is that key, this pulls it with graceful fallback.
-  const description = t(project.description_key, project.description_key) as string;
+  const description = t(project.description_key, project.description_key);
 
   return (
     <div

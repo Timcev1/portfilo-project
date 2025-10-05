@@ -1,16 +1,21 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, type ReactNode } from 'react';
 import { ChevronDown, Code, Smartphone, Server, Palette, Users } from 'lucide-react';
 import Image from 'next/image';
 import ResumeBtn from '../misc/Resume';
 import { useTranslations, useMessages } from 'next-intl';
 
+type MessageValues = Record<string, string | number | Date>;
+type Messages = ReturnType<typeof useMessages>;
+
+// Safe t(): returns a string; no any
 function useSafeT(ns?: Parameters<typeof useTranslations>[0]) {
-  const t = useTranslations(ns as any);
-  return (key: string, fallback?: string, values?: Record<string, any>) => {
+  const t = useTranslations(ns);
+  return (key: string, fallback?: string, values?: MessageValues): string => {
     try {
-      return t(key as any, values as any);
+      const res = values ? t(key, values) : t(key);
+      return typeof res === 'string' ? res : String(res);
     } catch {
       return fallback ?? key;
     }
@@ -18,10 +23,21 @@ function useSafeT(ns?: Parameters<typeof useTranslations>[0]) {
 }
 
 // Read a nested value (incl. arrays) by dot path from messages
-function getByPath(obj: any, path?: string) {
+function getByPath(obj: Messages | undefined, path?: string): unknown {
   if (!obj || !path) return undefined;
-  return path.split('.').reduce((o, k) => (o && k in o ? (o as any)[k] : undefined), obj);
+  return path.split('.').reduce<unknown>((o, k) => {
+    if (o && typeof o === 'object' && k in (o as Record<string, unknown>)) {
+      return (o as Record<string, unknown>)[k];
+    }
+    return undefined;
+  }, obj as unknown);
 }
+
+type ServiceItem = {
+  icon: ReactNode;
+  title: string;
+  description: string;
+};
 
 export default function ClientHero() {
   const [scrollY, setScrollY] = useState(0);
@@ -32,13 +48,16 @@ export default function ClientHero() {
   const messages = useMessages();
 
   // Pull array fields directly from messages
-  const summary: string[] = useMemo(() => {
+  const summary = useMemo<string[]>(() => {
     const arr = getByPath(messages, 'hero.summary');
-    return Array.isArray(arr) ? arr : [];
+    if (Array.isArray(arr)) {
+      return arr.filter((v): v is string => typeof v === 'string');
+    }
+    return [];
   }, [messages]);
 
   // Services from messages (title + description)
-  const services = useMemo(
+  const services = useMemo<ServiceItem[]>(
     () => [
       {
         icon: <Code className="w-6 h-6" />,
@@ -74,7 +93,7 @@ export default function ClientHero() {
   // SSR hydration guard
   if (!mounted) {
     return (
-      <section className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+      <section id="about" className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left space-y-6">
             <p className="text-6xl lg:text-7xl font-bold font-[family-name:var(--font-geist-mono)] bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -120,7 +139,7 @@ export default function ClientHero() {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+      <section id="about"  className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
         {/* Animated Background */}
         <div
           className="absolute inset-0 opacity-20 dark:opacity-30"
